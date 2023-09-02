@@ -1,7 +1,7 @@
-import { ListBox } from "../MovieList/ListBox.Component";
+import { Box } from "../MovieList/Box.Component";
 import { WatchedBox } from "../WatchMovieList/WatchedBox.component";
 
-export function Main() {
+export function Main({ children }) {
 	//const [query, setQuery] = useState("");
 	//const [movies, setMovies] = useState(tempMovieData);
 	//const [watched, setWatched] = useState(tempWatchedData);
@@ -13,8 +13,10 @@ export function Main() {
 	//const avgRuntime = average(watched.map((movie) => movie.runtime));
 	return (
 		<main className="main">
-			<ListBox />
+			{/*<Box movies = {movies} />
 			<WatchedBox /> 
+    */}
+			{children}
 		</main>
 	);
 }
