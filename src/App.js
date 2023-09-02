@@ -10,6 +10,8 @@ import { Main } from "./Components/MainMovie/Main.component.js";
 import { Box } from "./Components/MovieList/Box.Component.js";
 import { WatchedBox } from "./Components/WatchMovieList/WatchedBox.component.js";
 import { MovieList } from "./Components/MovieList/MovieList.component.js";
+import { WatchedSummary } from "./Components/WatchMovieList/WatchedSummary.component.js";
+import { WatchedMovieList } from "./Components/WatchMovieList/WatchedMovieList.Component.js";
 
 //const average = (arr) =>
 //	arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -17,7 +19,8 @@ import { MovieList } from "./Components/MovieList/MovieList.component.js";
 export default function App() {
 	// const [query, setQuery] = useState("");
 	const [movies, setMovies] = useState(tempMovieData);
-	// const [watched, setWatched] = useState(tempWatchedData);
+	const [watched, setWatched] = useState(tempWatchedData);
+
 	// const [isOpen1, setIsOpen1] = useState(true);
 	// const [isOpen2, setIsOpen2] = useState(true);
 
@@ -32,10 +35,17 @@ export default function App() {
 				<NumResults movies={movies} />
 			</NavBar>
 			<Main>
+				
 				<Box>
 					<MovieList movies={movies} />
 				</Box>
-				<WatchedBox />
+				{/*	<WatchedBox /> */}
+				
+				<Box>
+					<WatchedSummary watched={watched} />
+					<WatchedMovieList watched={watched} />
+				</Box>
+				
 			</Main>
 		</>
 	);
