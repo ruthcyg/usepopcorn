@@ -12,6 +12,7 @@ import { WatchedBox } from "./Components/WatchMovieList/WatchedBox.component.js"
 import { MovieList } from "./Components/MovieList/MovieList.component.js";
 import { WatchedSummary } from "./Components/WatchMovieList/WatchedSummary.component.js";
 import { WatchedMovieList } from "./Components/WatchMovieList/WatchedMovieList.Component.js";
+import StarRating from "./StarRating.js";
 
 //const average = (arr) =>
 //	arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -30,22 +31,36 @@ export default function App() {
 
 	return (
 		<>
+		   <StarRating/>
 			<NavBar>
 				<Search />
 				<NumResults movies={movies} />
 			</NavBar>
 			<Main>
-				{/** */}
+				
 				<Box>
 					<MovieList movies={movies} />
 				</Box>
 				{/*	<WatchedBox /> */}
 				
+
 				<Box>
 					<WatchedSummary watched={watched} />
 					<WatchedMovieList watched={watched} />
 				</Box>
-				
+
+	          
+			  {/*
+				<Box element={<MovieList movies={movies} />} />
+				<Box
+					element={
+						<>
+							<WatchedSummary watched={watched} />
+							<WatchedMovieList watched={watched} />{" "}
+						</>
+					}
+				/>
+				*/}
 			</Main>
 		</>
 	);
